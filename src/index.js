@@ -6,7 +6,7 @@ import getPuzzle from './requests'
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 
-//establish changeable variable for the game session instance itself
+//establish variable for the game session instance itself
 
 let game1 
 
@@ -26,6 +26,9 @@ window.addEventListener('keypress', (e) => {
     } 
 })
 
+//game1.puzzle -> "*** co**"
+//1. for each character in the string, add a span into #puzzle
+//2. the span's text should just be the letter itself
 const render = () => {
     puzzleEl.innerHTML = ''
     guessesEl.textContent = game1.statusMessage
@@ -37,16 +40,16 @@ const render = () => {
     })
     
 }
-//game1.puzzle -> "*** co**"
-//1. for each character in the string, add a span into #puzzle
-//2. the spans text should just be the letter itself
 
+// function to start a game session by sending request for puzzle data then instantiating a new Hangman object using that data
+// along with the number of allowed guesses
 const startGame = async () => {
     const puzzle = await getPuzzle('1')
     game1 = new Hangman(puzzle, 5)
     render()
 }
 
+// code for reset button (starts a new game on click)
 document.querySelector('#reset').addEventListener('click', startGame)
 
 startGame()

@@ -9,7 +9,7 @@ class Hangman {
     }
 
     // generates the text content of the game, which will be called when the game is initialized
-    // and every time a keystroke entry is made by the player (its result is set to puzzleEl.textContent)
+    // and every time a keystroke entry is made by the player (its result is set to HTML element puzzleEl.textContent)
 
     get puzzle() {
         let puzzle = ''
@@ -49,8 +49,8 @@ class Hangman {
         }
     }
 
-    // allows the player to make a guess by adding the guessed letter to the array under the Hangman object's associated property
-    // , but only if it is a letter not already contained in that array. If this letter is not one of the letters in the game's
+    // allows the player to make a guess by adding the guessed letter to the array under the Hangman object's associated property,
+    // but only if it is a letter not already contained in that array. If this letter is not one of the letters in the game's
     // word and has also not been guessed previously, then the number of remaining guesses will be decremented
     
     makeGuess(guess) {

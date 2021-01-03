@@ -14,6 +14,9 @@ const getPuzzle = async (wordCount) => {
 
 export { getPuzzle as default }
 
+
+/* DISREGARD BELOW-- THESE COMMENTS ARE ONLY RETAINED FOR REFERENCE FOR OTHER TECHNIQUES RELATED TO FETCH/RESPONSE PROCESSES */
+
 // const getPuzzleOld = (wordCount) => {
 //     return fetch(`http://puzzle.mead.io/puzzle?wordCount=${wordCount}`).then((response) => {
 //         if (response.status === 200) {
